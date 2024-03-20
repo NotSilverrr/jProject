@@ -36,8 +36,7 @@ public class SeaVessel {
             System.out.print("Sorry only positive value for life points, by default it will be 1\n");
             iLifePoints = 1;
         }
-            String s = "SeaVessel has " + this.iLifePoints + " life points, and is positionned  " + this.m_PosInfo.toString() + " and it still has its Radar";
-            return s;
+        return "SeaVessel has " + this.iLifePoints + " life points, and is positionned  " + this.m_PosInfo.toString() + " and it still has its Radar";
 
     }
 }

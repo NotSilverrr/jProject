@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class PositionInformation {
     private int m_iX;
     private int m_iY;
@@ -14,18 +16,20 @@ public class PositionInformation {
 
     public String toString() {
 
-        if (this.m_eOrentation == "VERTICAL" && this.m_iX> Board.s_iHeight) {
-            System.out.print("Sorry only positive value and less than board width, X is set to 0\n");
+        if (this.m_iY>Board.s_iHeight || this.m_iY<0) {
+            System.out.println("Sorry only positive value and less than board width, Y is set to 0");
             this.m_iY=0;
-        } else if (this.m_eOrentation == "HORIZONTAL" && this.m_iX> Board.s_iWidth){
-            System.out.print("Sorry only positive value and less than board width, X is set to 0\n");
+        }
+        if (this.m_iX>Board.s_iWidth || this.m_iX<0){
+            System.out.println("Sorry only positive value and less than board width, X is set to 0");
             this.m_iX=0;
         }
 
-        if(this.m_eOrentation!="HORIZONTAL" || this.m_eOrentation!="VERTICAL"){
-            System.out.print("Orientation is not one of acceptable proposition, by default it will be Vertical\n");
-            this.m_eOrentation = "Vertical";
+        if(!Objects.equals(this.m_eOrentation, "Vertical") && !Objects.equals(this.m_eOrentation, "Horizontal")){
+            System.out.println("Orientation is not one of acceptable proposition, by default it will be Vertical");
+            this.m_eOrentation="Vertical";
         }
+
         String s="coordinates ( "+this.m_iX+", "+this.m_iY+" )in "+this.m_eOrentation.toUpperCase();
         return s;
     }

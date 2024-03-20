@@ -3,8 +3,10 @@ public class Player {
     private Player EnemyPlayer;
 
     private Board m_Board;
-
-    public void Player(String p_sName){
+    public SeaVessel m_VesselArrayList;
+    public Player(String name){
+        String[] data = Main.getScannerInfo();
+        this.s_Name= data[1];
 
     }
 
@@ -19,16 +21,20 @@ public class Player {
     public void performSpecialAction(){
 
     }
-    //public Board getBoard(){}
+    public Board getBoard(){
+        return this.m_Board;
+    }
 
     //public void addDetectable(IDetectable p_Detectable){}
 
     //public List<IDetectable> getDetectables(){}
 
-    public void receiveMissile(int p_Missile){}
+    //public void receiveMissile(int p_Missile){}
 
     //public int isTouche(Missile p_Missile){}
 
-    //public String toString(){}
+    public String toString(){
+        return s_Name + " - has" + m_VesselArrayList + "Sea Vessel setup as follow";
+    }
 
 }

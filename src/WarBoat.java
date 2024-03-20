@@ -2,8 +2,6 @@ public class WarBoat extends SeaVessel{
 
     private Radar m_Radar;
 
-
-
     public void applyDamages(){
 
     }
