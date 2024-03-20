@@ -1,3 +1,3 @@
 public enum Orientation {
-    VERTICAL,HORIZONTAL,NOT_RELEVANT
+    Vertical,Horizontal,Not_Relevent
 }

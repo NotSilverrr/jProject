@@ -32,11 +32,12 @@ public class SeaVessel {
     //private boolean isTouched(p_PositionInformation: PositionInformation)
     //private applyDamages(p_Missile: Missile)*
     public String toString(){
-        //if(!this.m_Missile.isEmpty()) {
+        if(iLifePoints < 0){
+            System.out.print("Sorry only positive value for life points, by default it will be 1\n");
+            iLifePoints = 1;
+        }
             String s = "SeaVessel has " + this.iLifePoints + " life points, and is positionned  " + this.m_PosInfo.toString() + " and it still has its Radar";
             return s;
-        //}else{
-            //return "SeaVessel has " + this.iLifePoints + " life points, and is positionned  " + this.m_PosInfo.toString() + " and it still has its Radar";
-        //}
+
     }
 }
